@@ -24,7 +24,9 @@ public class MemeScript {
     /**
      * 获取token的参数，使用 博睿 的 Encipher_Ticket.jar生成
      */
-    private static String ticket="?g=s?d?s/o;v?g?h9.?s?h.t?.+m?sAtLa\\y\\h]MLs?g(t\\<_j+%?s[`<f]hBs?gbv`__ZVod7A2avYx.F@1-^?d`=KiPB`2a9Qe[VENVn3&KkZz/F9b?l?m4d";
+    private static String ticket="2v2b?d7v?f$i)i?a?.`+?m?g`%1i?sTd]uHgNo/Qd2(t?gVJEa]`?sZ 4nPcCa0x`x?f*WMmVy1)8#TdK4/PGJ?d[waM[G^oX;]u1$7R^f-TUhBr]C?c`P?d?.";
+
+
 
     private static String gitPath="  https://github.com/NByida/MemeAppScript \r\n";
 
@@ -145,6 +147,7 @@ public class MemeScript {
                     try {
                         if(!isTest){
                             DingDingUtil.senDingMsg(crashMsg);
+//                            DingDingUtil.senDingMsg("么么test");
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -219,6 +222,7 @@ public class MemeScript {
                 try {
                     if(!isTest){
                         DingDingUtil.senDingMsg(crashMsg);
+//                        DingDingUtil.senDingMsg("么么 tets");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

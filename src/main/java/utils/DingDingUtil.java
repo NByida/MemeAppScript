@@ -135,7 +135,9 @@ public class DingDingUtil {
     }
 
     public static void senDingMsg(String args) throws IOException {
-        String webhook = "https://oapi.dingtalk.com/robot/send?access_token=3736d8adab78c746d85033ee8dbb5a2f20a2721a98dbb5f9b165d3b34ae80288";
+//          String webhook = "https://oapi.dingtalk.com/robot/send?access_token=ee55a7324543399bdb4d360ecba3f3bab9ef8e030f8d08f4dc881ad7d865ffd6";
+
+          String webhook = "https://oapi.dingtalk.com/robot/send?access_token=539408aef7934c5b3a5a36605c6022e43593df523a0912af8838318e22b49a7d";
         DingDingUtil.sendMsg(webhook, null, args, null);
     }
 }
