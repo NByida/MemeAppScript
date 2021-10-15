@@ -13,7 +13,7 @@ public class CrashUtils {
 
 
     public static Crash getCrashRate(Crash crash){
-        if(crash==null){
+        if(crash == null){
             return crash;
         }
         crash.setStartTime(getStringTimes(0));
@@ -23,6 +23,22 @@ public class CrashUtils {
             for (Crash.HourCrash crash1:data){
                 crash.addTotalActiveNum(crash1.getStatemainId());
                 crash.addTotalCrashNum(crash1.getCrashNum());
+            }
+        }
+        return crash;
+    }
+
+    public static Crash getLagRate(Crash crash){
+        if(crash == null){
+            return crash;
+        }
+        crash.setStartTime(getStringTimes(0));
+        crash.setEndTime(getStringTimes(24));
+        List<Crash.HourCrash> data=crash.getData();
+        if(data!=null&&data.size()>0){
+            for (Crash.HourCrash crash1:data){
+                crash.addTotalActiveNum(crash1.getStatemainId());
+                crash.addTotalLagNum(crash1.getAppLagNum());
             }
         }
         return crash;
