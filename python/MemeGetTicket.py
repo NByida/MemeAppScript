@@ -19,6 +19,6 @@ def getBrTick():
     print(signature)
     MemeScriptClass = jpype.JClass("meme.MemeScript")
     MemeScript = MemeScriptClass()
-    # MemeScript.main(MemeScript.getString(signature))
+    MemeScript.main(MemeScript.getString(signature))
     jpype.shutdownJVM()
 getBrTick()
