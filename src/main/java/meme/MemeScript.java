@@ -33,31 +33,28 @@ public class MemeScript {
      * true 不发生到钉钉群
      */
     private static boolean isTest = false;
+    private static boolean needLog = false;
 
     private static ArrayList<AppInfo.DataDTO> listApps;
 
 
-    /**
-     * 请勿删除，提供给python调用
-     * 使用 博睿 的 Encipher_Ticket.jar生成ticket
-     * @param ticket
-     * @return
-     */
-    public String[] getString(String ticket){
-        return new String[]{ticket};
-    }
 
     static Retrofit retrofit;
 
     public static void main(String[] args) throws IOException {
         if(args!=null && args.length>0){
-            isTest= Boolean.getBoolean(args[0]);
+            isTest = args[0].equals("true");
+            if(args.length>1){
+                needLog = args[1].equals("true");
+            }
         }
         ticket= Encipher.generateEncyptTicket();
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);//这里可以选择拦截级别
-        builder.addInterceptor(loggingInterceptor);
+        if(needLog){
+            builder.addInterceptor(loggingInterceptor);
+        }
          retrofit = new Retrofit.Builder()
                 .client(builder.build())
                 .baseUrl("https://sdk.bonree.com/")
