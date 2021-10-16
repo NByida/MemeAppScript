@@ -3,6 +3,7 @@ package meme;
 import bean.AppInfo;
 import bean.Crash;
 import cn.hutool.core.text.StrBuilder;
+import com.criag.Encipher;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.*;
@@ -11,8 +12,6 @@ import utils.CrashUtils;
 import utils.DingDingUtil;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,8 +51,9 @@ public class MemeScript {
 
     public static void main(String[] args) throws IOException {
         if(args!=null && args.length>0){
-            ticket=args[0];
+            isTest= Boolean.getBoolean(args[0]);
         }
+        ticket= Encipher.generateEncyptTicket();
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);//这里可以选择拦截级别
