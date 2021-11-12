@@ -13,4 +13,13 @@ public interface DingServices {
             @Body RequestBody   bodey
     );
 
+
+
+
+    @Headers("Content-Type: application/json;charset=UTF-8")
+    @POST("robot/send?access_token=264256df24682d0da701d340422a57198d0c10e41676fbac1f0989f54bc629d0")
+    Call<String> sendMessageZengzhang(
+            @Body RequestBody   bodey
+    );
+
 }

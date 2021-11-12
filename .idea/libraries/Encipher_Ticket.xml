@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Encipher_Ticket">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/python/Encipher_Ticket.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

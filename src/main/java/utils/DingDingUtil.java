@@ -132,6 +132,9 @@ public class DingDingUtil {
         MediaType mediaType = MediaType.parse("application/json");
         Call<String> repos = service.sendMessage(RequestBody.create(mediaType, body));
         repos.execute();
+
+        Call<String> repos2 = service.sendMessageZengzhang(RequestBody.create(mediaType, body));
+        repos2.execute();
     }
 
     public static void senDingMsg(String args) throws IOException {

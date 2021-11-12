@@ -50,11 +50,11 @@ public class MemeScript {
         }
         ticket= Encipher.generateEncyptTicket();
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);//这里可以选择拦截级别
-        if(needLog){
-            builder.addInterceptor(loggingInterceptor);
-        }
+        HttpLoggingInterceptor loggeingInterceptor = new HttpLoggingInterceptor();
+//        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);//这里可以选择拦截级别
+//        if(needLog){
+//            builder.addInterceptor(loggingInterceptor);
+//        }
          retrofit = new Retrofit.Builder()
                 .client(builder.build())
                 .baseUrl("https://sdk.bonree.com/")
